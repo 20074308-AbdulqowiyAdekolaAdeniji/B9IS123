@@ -1,7 +1,27 @@
 <html>
 <head>
   <title>Baggage Checker</title>
-  <script src="script.js" defer></script>
+  <script>
+    const check = () => {
+    const value = document.getElementById("weight").value; // get input value from user
+    const weight = parseInt(value); // convert to integer insantly
+    
+    if (isNaN(weight)) {
+      alert("Please enter a valid number");  // Checks if a valid number has been entered
+      return;
+    }
+
+    if (weight <= 15) {
+      alert(`The baggage weights ${weight}, it is acceptable`);
+    } else {
+      alert(`The baggage is overweight`);
+      document.getElementById('removed').style='display:block;'
+      document.getElementById('remB').style='display:block;'
+    }
+  }
+
+  let remove=()=>alert('Removing weight: '+parseInt(document.getElementById('removed').value))
+  </script>
 </head>
 <body>
   <p>Hi... I'm Abdulqowiy Adekola Adeniji :)</p>
