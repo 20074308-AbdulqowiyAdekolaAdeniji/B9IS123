@@ -1,6 +1,13 @@
 // This script is for the baggage weight exercise
 // Function to check baggage weight
-const customerMessage = () => {
+
+//alert("Hello");//write a check function here...
+            //update: the check function should reveal the "removed" text input
+            //if the baggage is overweight
+            //and a button to remove some
+            //the remove function should update the weight
+            //and let the user know when ok to proceed
+const check = () => {
     const value = document.getElementById("weight").value; // get input value from user
     const weight = parseInt(value); // convert to integer insantly
     
@@ -13,5 +20,9 @@ const customerMessage = () => {
       alert(`The baggage weights ${weight}, it is acceptable`);
     } else {
       alert(`The baggage is overweight`);
+      document.getElementById('removed').style='display:block;'
+      document.getElementById('remB').style='display:block;'
     }
   }
+
+  let remove=()=>alert('Removing weight: '+parseInt(document.getElementById('removed').value))

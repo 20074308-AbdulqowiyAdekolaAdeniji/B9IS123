@@ -8,7 +8,14 @@
   <h1>BAGGAGE CHECKER</h1>
   <div>
     <input placeholder="Enter your baggage weight" type="text" id="weight">
-    <button onclick="customerMessage()">Check Baggage</button>
+    <button onclick="check()">Check Baggage</button>
+  </div>
+
+  <div>
+        <input type="text" id="removed" style='display:none;'>
+        <!--//replace remove function.-->
+        <button id='remB' onclick="remove()" style='display:none;'>Remove this much baggage (kg)</button>
+
   </div>
 </body>
 </html>
