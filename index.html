@@ -37,6 +37,14 @@
       }
 
       currentWeight -= toRemove; // deduct from current weight
+
+      if (currentWeight <= 15) {
+        alert(`Baggage is now acceptable at ${currentWeight}kg 👍`);
+        document.getElementById('removed').style='display:none;';
+        document.getElementById('remB').style='display:none;';
+      } else {
+        alert(`Baggage still overweight at ${currentWeight}kg 😢`);
+      }
     }
   </script>
 </head>
