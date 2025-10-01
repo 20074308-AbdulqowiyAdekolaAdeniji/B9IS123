@@ -2,17 +2,6 @@
 //https://projecteuler.net/problem=1
 //ex2 should output the sum of all multiples of a or b less than n
 
-let euler1=()=>{
-    let sum = 0
-    for (let n = 1; n < 10; n++) {
-        if (n % 3 === 0 || n % 5 === 0){
-            sum += n;
-        }
-    }
-
-    alert(`The sum of all the multiples of 3 and 5 below 10 is ${sum}`)
-}
-
 let eulerCustom=(a,b,n)=> {
 
     let sum = 0
@@ -25,16 +14,22 @@ let eulerCustom=(a,b,n)=> {
     return sum;    
 }
 
-const aValue = document.getElementById("a").value;
-const a = parseInt(aValue);
+let euler1=()=>{
+    const sum = eulerCustom(3,5,10);
 
-const bValue = document.getElementById("b").value;
-const b = parseInt(bValue);
-
-const nValue = document.getElementById("n").value;
-const n = parseInt(nValue);
+    alert(`The sum of all the multiples of 3 and 5 below 10 is ${sum}`)
+}
 
 const eulerResult = () =>{
- const totalSum = eulerCustom(a,b,n);
-alert(`The answer is..... 🥁 🥁 🥁 ...${totalSum}`)
+    const aValue = document.getElementById("a").value;
+    const a = parseInt(aValue);
+
+    const bValue = document.getElementById("b").value;
+    const b = parseInt(bValue);
+
+    const nValue = document.getElementById("n").value;
+    const n = parseInt(nValue);
+
+    const totalSum = eulerCustom(a,b,n);
+    alert(`The answer is..... 🥁 🥁 🥁 ...${totalSum}`)
 }
