@@ -34,5 +34,7 @@ const b = parseInt(bValue);
 const nValue = document.getElementById("n").value;
 const n = parseInt(nValue);
 
-const totalSum = eulerCustom(a,b,n);
+const eulerResult = () =>{
+ const totalSum = eulerCustom(a,b,n);
 alert(`The answer is..... 🥁 🥁 🥁 ...${totalSum}`)
+}
