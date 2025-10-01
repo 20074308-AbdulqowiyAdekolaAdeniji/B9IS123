@@ -1,56 +1,12 @@
 <html>
 <head>
-  <title>Baggage Checker</title>
-  <script>
-    let currentWeight = 0; // keep track of baggage weight
-
-    // Weight checking function
-    const check = () => {
-      const value = document.getElementById("weight").value; 
-      const weight = parseInt(value); 
-      
-      //This is to avoid getting an input that's not a number
-      if (isNaN(weight)) {
-        alert("Please enter a valid number");
-        return;
-      }
-
-      currentWeight = weight; // save the weight for later use i.e for calculation
-
-      if (currentWeight <= 15) {
-        alert(`The baggage weighs ${currentWeight}, it is acceptable`);
-      } else {
-        alert(`The baggage is overweight`);
-        document.getElementById('removed').style='display:block;';
-        document.getElementById('remB').style='display:block;';
-      }
-    }
-
-    // Remove function
-    const remove = () => {
-      const value = document.getElementById('removed').value;
-      const toRemove = parseInt(value);
-
-      if (isNaN(toRemove)) {
-        alert("Please enter a valid number to remove");
-        return;
-      }
-
-      currentWeight -= toRemove; // deduct from current weight
-
-      if (currentWeight <= 15) {
-        alert(`Baggage is now acceptable at ${currentWeight}kg 👍`);
-        document.getElementById('removed').style='display:none;';
-        document.getElementById('remB').style='display:none;';
-      } else {
-        alert(`Baggage still overweight at ${currentWeight}kg 😢`);
-      }
-    }
-  </script>
+  <title>Exercise!!!</title>
+  <script src="ex1.js"></script>
+  <script src="ex2.js"></script>
 </head>
 <body>
   <p>Hi... I'm Abdulqowiy Adekola Adeniji :)</p>
-  <h1>BAGGAGE CHECKER</h1>
+  <h1>EX1 - BAGGAGE CHECKER</h1>
   <div>
     <input placeholder="Enter your baggage weight" type="text" id="weight">
     <button onclick="check()">Check Baggage</button>
@@ -60,5 +16,17 @@
     <input type="text" id="removed" style='display:none;' placeholder="Enter weight to remove">
     <button id='remB' onclick="remove()" style='display:none;'>Remove this much baggage (kg)</button>
   </div>
+
+  <h1>EX2</h1>
+    <p><button onclick="euler1()">Press for solution to project Euler</button>
+</p>
+
+<p>
+       <label for="a:">A</label> <input type="text" id="a">
+        <label for="b:">B</label><input type="text" id="b">
+       <label for="n:">N</label> <input type="text" id="n">
+
+</p>
+    <p><button onclick="eulerCustom()">Press for custom sum of multiples</button>
 </body>
 </html>
