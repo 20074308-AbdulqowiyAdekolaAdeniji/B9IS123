@@ -2,25 +2,42 @@
 <head>
   <title>Baggage Checker</title>
   <script>
+    let currentWeight = 0; // keep track of baggage weight
+
+    // Weight checking function
     const check = () => {
-    const value = document.getElementById("weight").value; // get input value from user
-    const weight = parseInt(value); // convert to integer insantly
-    
-    if (isNaN(weight)) {
-      alert("Please enter a valid number");  // Checks if a valid number has been entered
-      return;
+      const value = document.getElementById("weight").value; 
+      const weight = parseInt(value); 
+      
+      //This is to avoid getting an input that's not a number
+      if (isNaN(weight)) {
+        alert("Please enter a valid number");
+        return;
+      }
+
+      currentWeight = weight; // save the weight for later use i.e for calculation
+
+      if (currentWeight <= 15) {
+        alert(`The baggage weighs ${currentWeight}, it is acceptable`);
+      } else {
+        alert(`The baggage is overweight`);
+        document.getElementById('removed').style='display:block;';
+        document.getElementById('remB').style='display:block;';
+      }
     }
 
-    if (weight <= 15) {
-      alert(`The baggage weights ${weight}, it is acceptable`);
-    } else {
-      alert(`The baggage is overweight`);
-      document.getElementById('removed').style='display:block;'
-      document.getElementById('remB').style='display:block;'
-    }
-  }
+    // Remove function
+    const remove = () => {
+      const value = document.getElementById('removed').value;
+      const toRemove = parseInt(value);
 
-  let remove=()=>alert('Removing weight: '+parseInt(document.getElementById('removed').value))
+      if (isNaN(toRemove)) {
+        alert("Please enter a valid number to remove");
+        return;
+      }
+
+      currentWeight -= toRemove; // deduct from current weight
+    }
   </script>
 </head>
 <body>
@@ -32,10 +49,8 @@
   </div>
 
   <div>
-        <input type="text" id="removed" style='display:none;'>
-        <!--//replace remove function.-->
-        <button id='remB' onclick="remove()" style='display:none;'>Remove this much baggage (kg)</button>
-
+    <input type="text" id="removed" style='display:none;' placeholder="Enter weight to remove">
+    <button id='remB' onclick="remove()" style='display:none;'>Remove this much baggage (kg)</button>
   </div>
 </body>
 </html>
