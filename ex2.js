@@ -4,24 +4,16 @@
 
 let euler1=()=>{
     let sum = 0
-    for (let n = 1; n < 1000; n++) {
+    for (let n = 1; n < 10; n++) {
         if (n % 3 === 0 || n % 5 === 0){
             sum += n;
         }
     }
 
-    alert(`The sum of all the multiples of 3 and 5 below 1000 is ${sum}`)
+    alert(`The sum of all the multiples of 3 and 5 below 10 is ${sum}`)
 }
 
-let eulerCustom=()=> {
-    const aValue = document.getElementById("a").value;
-    const a = parseInt(aValue);
-
-    const bValue = document.getElementById("b").value;
-    const b = parseInt(bValue);
-
-    const nValue = document.getElementById("n").value;
-    const n = parseInt(nValue);
+let eulerCustom=(a,b,n)=> {
 
     let sum = 0
     for (let x = 1; x < n; x++) {
@@ -30,5 +22,17 @@ let eulerCustom=()=> {
         }
     }
 
-    alert(`The answer is..... 🥁 🥁 🥁 ...${sum}`)
+    return sum;    
 }
+
+const aValue = document.getElementById("a").value;
+const a = parseInt(aValue);
+
+const bValue = document.getElementById("b").value;
+const b = parseInt(bValue);
+
+const nValue = document.getElementById("n").value;
+const n = parseInt(nValue);
+
+const totalSum = eulerCustom(a,b,n);
+alert(`The answer is..... 🥁 🥁 🥁 ...${totalSum}`)
