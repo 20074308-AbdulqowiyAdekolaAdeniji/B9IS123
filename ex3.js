@@ -2,7 +2,34 @@ let listEuler1=(a,b,l)=>0;//obviously wrong - compute the sum of multiples of a 
 let listEuler2=(a,l)=>0;//obviously wrong - compute the sum of multiples in list a found in list l
 let listEuler3=(a,l)=>0;//obviously wrong - compute the sum of multiples in list a found in list l
 
-let eulerlist=()=>
+let eulerListCustom=(a,b,n)=> {
+
+     let sum = 0
+
+    sum = n.filter(x=>x % a === 0 || x % b === 0)
+      .reduce((x,y)=>y+x,0)
+
+    return sum;         
+}
+
+let eulerList = () => {
+    const aValue = document.getElementById("a1").value;
+    const a = parseInt(aValue);
+
+    const bValue = document.getElementById("b1").value;
+    const b = parseInt(bValue);
+
+    const l = document.getElementById("l").value.split(" ").map(x=>parseInt(x));
+    //const l = parseInt(lValue);
+
+    const result = eulerListCustom(a,b,l)
+
+    return result
+}
+
+//////////////////////////////////////////////////////////////////////////////////
+
+let euler1list=()=>
 {
     a=2//can un-hardcode
     b=3
