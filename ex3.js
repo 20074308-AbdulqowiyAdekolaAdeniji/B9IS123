@@ -15,13 +15,13 @@ let eulerListCustom=(a,b,n)=> {
 // let arr = [3,5]
 // let list = [1,2,3,4,5,6,7,8,9]
 
-const eulerArrayCustom = (arr, list) => {
+let eulerArrayCustom = (arr, list) => {
 
-    const sum = list
+    let sum = list
     .filter(n => arr.some(m => n % m === 0))
     .reduce((a, b) => a + b, 0);
 
-    alert(`${sum}`)
+    return sum
 }
 
 //////////////////////////////////////////////////////////////////////////////////
