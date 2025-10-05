@@ -12,9 +12,19 @@ let eulerListCustom=(a,b,n)=> {
     return sum;         
 }
 
-let eulerArray = (a,l)=>{
-    l.map(x=>x % a === 0)
+// let arr = [3,5]
+// let list = [1,2,3,4,5,6,7,8,9]
+
+const eulerArrayCustom = (arr, list) => {
+
+    const sum = list
+    .filter(n => arr.some(m => n % m === 0))
+    .reduce((a, b) => a + b, 0);
+
+    alert(`${sum}`)
 }
+
+//////////////////////////////////////////////////////////////////////////////////
 
 let eulerList = () => {
     const a = parseInt(document.getElementById("a1").value);
@@ -24,6 +34,15 @@ let eulerList = () => {
     const l = document.getElementById("l").value.split(" ").map(x=>parseInt(x));
 
     const result = eulerListCustom(a,b,l)
+
+    alert(result)
+}
+
+let eulerArray = () => {
+    const a = document.getElementById("aList").value.split(" ").map(x=>parseInt(x));
+    const m = document.getElementById("mList").value.split(" ").map(x=>parseInt(x));
+
+    const result = eulerArrayCustom(a,m)
 
     alert(result)
 }
