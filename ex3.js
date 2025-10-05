@@ -12,20 +12,22 @@ let eulerListCustom=(a,b,n)=> {
     return sum;         
 }
 
-let eulerList = () => {
-    const aValue = document.getElementById("a1").value;
-    const a = parseInt(aValue);
+let eulerArray = (a,l)=>{
+    l.map(x=>x % a === 0)
+}
 
-    const bValue = document.getElementById("b1").value;
-    const b = parseInt(bValue);
+let eulerList = () => {
+    const a = parseInt(document.getElementById("a1").value);
+
+    const b = parseInt(document.getElementById("b1").value);
 
     const l = document.getElementById("l").value.split(" ").map(x=>parseInt(x));
-    //const l = parseInt(lValue);
 
     const result = eulerListCustom(a,b,l)
 
-    return result
+    alert(result)
 }
+
 
 //////////////////////////////////////////////////////////////////////////////////
 
