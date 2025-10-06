@@ -39,9 +39,13 @@ const ex4result = (questionString) =>{
     return result
 }
 
+console.log(ex4result('3 5 : 1 2 3 4 5 6 7 8 9'))
+
 //Callback function for onClick function
 const ex4Display = () => {
     const a = document.getElementById("arrList").value
+    //.split(" ").map(x=>parseInt(x))
+    console.log(a)
         const answer = ex4result(a)
         alert(`The answer to the sum of multiples is ${answer}`)
 }
