@@ -36,3 +36,9 @@ const ex4result = (questionString) =>{
 
     alert(result)
 }
+
+const ex4Display = () => {
+    const a = document.getElementById("arrList").value
+        //.split(" ").map(x=>parseInt(x))
+        alert(ex4result(a))
+}
