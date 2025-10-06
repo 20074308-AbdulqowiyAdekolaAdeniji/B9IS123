@@ -15,6 +15,8 @@
 
 //if you're finished, code it into a page
 
+
+// Function to calculate Sum of Multiples for the arrays
 let eulerArrayCustom = (arr, list) => {
 
     let sum = list
@@ -24,10 +26,10 @@ let eulerArrayCustom = (arr, list) => {
     return sum
 }
 
-const questionString = "3 5 : 1 2 3 4 5 6 7 8 9"
+// const questionString = "3 5 : 1 2 3 4 5 6 7 8 9"
 
 
-
+// Function to take "3 5 : 1 2 3 4 5 6 7 8 9" and calculate
 const ex4result = (questionString) =>{
     const multipleString = questionString.split(":")[0].split('  ').toString('').trimEnd().split(' ').map(n=>parseInt(n));
     const listString = questionString.split(":")[1].split('  ').toString('').trimStart().split(' ').map(n=>parseInt(n));
@@ -37,6 +39,7 @@ const ex4result = (questionString) =>{
     alert(result)
 }
 
+//Callback function for onClick function
 const ex4Display = () => {
     const a = document.getElementById("arrList").value
         //.split(" ").map(x=>parseInt(x))
