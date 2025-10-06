@@ -36,12 +36,12 @@ const ex4result = (questionString) =>{
 
     const result = eulerArrayCustom (multipleString, listString)
 
-    alert(result)
+    return result
 }
 
 //Callback function for onClick function
 const ex4Display = () => {
     const a = document.getElementById("arrList").value
-        //.split(" ").map(x=>parseInt(x))
-        alert(ex4result(a))
+        const answer = ex4result(a)
+        alert(`The answer to the sum of multiples is ${answer}`)
 }
