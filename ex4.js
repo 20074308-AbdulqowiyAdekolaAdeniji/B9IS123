@@ -29,8 +29,8 @@ const questionString = "3 5 : 1 2 3 4 5 6 7 8 9"
 
 
 const ex4result = (questionString) =>{
-    const multipleString = questionString.split(":")[0].split('  ').toString('').trimEnd().split(' ');
-    const listString = questionString.split(":")[1].split('  ').toString('').trimStart().split(' ')
+    const multipleString = questionString.split(":")[0].split('  ').toString('').trimEnd().split(' ').map(n=>parseInt(n));
+    const listString = questionString.split(":")[1].split('  ').toString('').trimStart().split(' ').map(n=>parseInt(n));
 
     const result = eulerArrayCustom (multipleString, listString)
 
