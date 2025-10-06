@@ -17,7 +17,7 @@
 
 
 // Function to calculate Sum of Multiples for the arrays
-let eulerArrayCustom = (arr, list) => {
+let eulerArrayC = (arr, list) => {
 
     let sum = list
     .filter(n => arr.some(m => n % m === 0))
@@ -34,17 +34,16 @@ const ex4result = (questionString) =>{
     const multipleString = questionString.split(":")[0].split('  ').toString('').trimEnd().split(' ').map(n=>parseInt(n));
     const listString = questionString.split(":")[1].split('  ').toString('').trimStart().split(' ').map(n=>parseInt(n));
 
-    const result = eulerArrayCustom (multipleString, listString)
+    const result = eulerArrayC (multipleString, listString)
 
     return result
 }
 
-console.log(ex4result('3 5 : 1 2 3 4 5 6 7 8 9'))
+//console.log(ex4result('3 5 : 1 2 3 4 5 6 7 8 9'))
 
 //Callback function for onClick function
 const ex4Display = () => {
     const a = document.getElementById("arrList").value
-    //.split(" ").map(x=>parseInt(x))
     console.log(a)
         const answer = ex4result(a)
         alert(`The answer to the sum of multiples is ${answer}`)
