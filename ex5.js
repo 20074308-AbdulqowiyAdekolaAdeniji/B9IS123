@@ -35,20 +35,20 @@ let eulerArrayC5 = (arr, list) => {
     return sum
 }
 
-// const questionString = "3 5 : 1 2 3 4 5 6 7 8 9"
-
-
 // Function to take "3 5 : 1 2 3 4 5 6 7 8 9" and calculate
 const ex5result = (questionString) =>{
     const multipleString = questionString.split(":")[0].split('  ').toString('').trimEnd().split(' ').map(n=>parseInt(n));
     const listString = questionString.split(":")[1].split('  ').toString('').trimStart().split(' ').map(n=>parseInt(n));
 
-    const result = eulerArrayC5 (multipleString, listString)
+    try {
+        if (isNaN(multipleString) || isNaN(listString)) throw "You need to enter a number, thanks!!"
+        const result = eulerArrayC5 (multipleString, listString)
 
-    return result
+        return result
+    } catch (err) {
+        alert(err)
+    }    
 }
-
-//console.log(ex4result('3 5 : 1 2 3 4 5 6 7 8 9'))
 
 //Callback function for onClick function
 const ex5Display = () => {
