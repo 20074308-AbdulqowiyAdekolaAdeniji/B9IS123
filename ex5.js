@@ -55,5 +55,5 @@ const ex5Display = () => {
     const a = document.getElementById("strList").value
     console.log(a)
         const answer = ex5result(a)
-        alert(`The answer to the sum of multiples is ${answer}`)
+        if (answer) alert(`The answer to the sum of multiples is ${answer}`)
 }
