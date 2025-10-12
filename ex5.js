@@ -35,28 +35,22 @@ let eulerArrayC5 = (arr, list) => {
     return sum
 }
 
-// const questionString = "3 5 : 1 2 3 4 5 6 7 8 9"
-
-
 // Function to take "3 5 : 1 2 3 4 5 6 7 8 9" and calculate
 const ex5result = (questionString) =>{
     const multipleString = questionString.split(":")[0].split('  ').toString('').trimEnd().split(' ').map(n=>parseInt(n));
     const listString = questionString.split(":")[1].split('  ').toString('').trimStart().split(' ').map(n=>parseInt(n));
     
   try {
-    console.log(multipleString)
     const checkNum = multipleString.some(x=>isNaN(x))
     
     if (checkNum) {
-      throw "Mtcheew"
+      throw `Corrupt : ${listString.toString().replaceAll(",", " ")}`
       return;
-    } 
-    console.log(checkNum)
-    
+    }     
     
     const result = eulerArrayC5 (multipleString, listString)
 
-    return result
+    return [result, multipleString, listString]
   } 
     catch(err){
       alert(err)
@@ -64,11 +58,12 @@ const ex5result = (questionString) =>{
 
 }
 
-//console.log(ex4result('3 5 : 1 2 3 4 5 6 7 8 9'))
-
 //Callback function for onClick function
 const ex5Display = () => {
     const a = document.getElementById("strList").value
-        const answer = ex5result(a)
-        if (answer) alert(`The answer to the sum of multiples is ${answer}`)
+        const answer = ex5result(a)[0]
+        const multiples = ex5result(a)[1].toString().replace(",", " ")
+        const list = ex5result(a)[2].toString().replaceAll(",", " ")
+        
+        if (answer) alert(`${answer} : ${multiples} : ${list}`)
 }
