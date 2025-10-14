@@ -59,5 +59,29 @@ Sum of multiples of a or b in list l.<br>
        <h1>Exercise 5</h1>
        <label for="strList">A</label> <input type="text" id="strList">
        <p><button onclick="ex5Display()">Press for custom sum of multiples</button>
+
+
+      <!-- CUSTOM COMPONENT -->
+       <template id="custom-card">
+        <style>
+          .card {
+            background-color: #f3f3f3;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 15px;
+            max-width: 300px;
+            margin-bottom: 5px;
+          }
+        </style>
+        <div class="card">
+          <h3 id="title">Default Title</h3>
+          <p id="content">Default content inside the custom card element.</p>
+        </div>
+      </template>
+
+      <custom-card title="Welcome!" content="This is a reusable info card built using custom elements."></custom-card>
+      <custom-card title="About Me" content="I’m learning advanced web programming with Paul Laird."></custom-card>
+
+<my-paragraph></my-paragraph>
 </body>
 </html>
