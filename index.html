@@ -101,8 +101,9 @@
 
 
       <!-- CUSTOM COMPONENT -->
-       <h1>Custom Component</h1>
-       <template id="custom-card">
+    <section aria-labelledby="custom-heading">
+      <h1 id="custom-heading">Custom Component</h1>
+      <template id="custom-card">
         <style>
           .card {
             background-color: #f3f3f3;
@@ -118,10 +119,11 @@
           <p id="content">Default content inside the custom card element.</p>
         </div>
       </template>
+      <custom-card title="Welcome!" content="This is a reusable info card built using custom elements."></custom-card>
+      <custom-card title="About Me" content="I'm learning advanced web programming with Paul Laird."></custom-card>
+    </section>
+  </main>
 
-      <custom-card title="Welcome!"  content="This is a reusable info card built using custom elements."></custom-card>
-      <custom-card title="About Me"  content="I’m learning advanced web programming with Paul Laird."></custom-card>
-
-<script src="customComponent.js"></script>
+  <script src="customComponent.js"></script>
 </body>
 </html>
