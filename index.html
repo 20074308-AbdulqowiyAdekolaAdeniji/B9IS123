@@ -33,17 +33,23 @@
       </form>
     </section>
 
-  <h1>EX2</h1>
-    <p><button onclick="euler1()">Press for solution to project Euler</button>
-</p>
-
-<p>
-       <label for="a:">A</label> <input type="text" id="a">
-        <label for="b:">B</label><input type="text" id="b">
-       <label for="n:">N</label> <input type="text" id="n">
-
-</p>
-    <p><button onclick="eulerResult()">Press for custom sum of multiples</button>
+    <section aria-labelledby="ex2-heading">
+        <h1 id="ex2-heading">EX2</h1>
+        <p>
+          <button type="button" onclick="euler1()">Press for solution to project Euler</button>
+        </p>
+        <form onsubmit="return false;">
+          <label for="a">A:</label>
+          <input type="text" id="a">
+          <label for="b">B:</label>
+          <input type="text" id="b">
+          <label for="n">N:</label>
+          <input type="text" id="n">
+        </form>
+        <p>
+          <button type="button" onclick="eulerResult()">Press for custom sum of multiples</button>
+        </p>
+      </section>
 
       <h1>Exercise 3</h1>
 <p>
