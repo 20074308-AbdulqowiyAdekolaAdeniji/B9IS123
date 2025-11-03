@@ -14,17 +14,24 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <p>Hi... I'm Abdulqowiy Adekola Adeniji 😎👌</p>
-  <h1>EX1 - BAGGAGE CHECKER</h1>
-  <div>
-    <input placeholder="Enter your baggage weight" type="text" id="weight">
-    <button onclick="check()">Check Baggage</button>
-  </div>
+  <header>
+    <p>Hi... I'm Abdulqowiy Adekola Adeniji 😎👌</p>
+  </header>
 
-  <div>
-    <input type="text" id="removed" style='display:none;' placeholder="Enter weight to remove">
-    <button id='remB' onclick="remove()" style='display:none;'>Remove this much baggage (kg)</button>
-  </div>
+  <main>
+    <section aria-labelledby="ex1-heading">
+      <h1 id="ex1-heading">EX1 - BAGGAGE CHECKER</h1>
+      <form onsubmit="return false;">
+        <label for="weight">Enter your baggage weight:</label>
+        <input type="text" id="weight" placeholder="Enter your baggage weight">
+        <button type="button" onclick="check()">Check Baggage</button>
+      </form>
+      <form onsubmit="return false;" style="display:none;" id="removal-form">
+        <label for="removed">Enter weight to remove:</label>
+        <input type="text" id="removed" placeholder="Enter weight to remove">
+        <button type="button" id="remB" onclick="remove()">Remove this much baggage (kg)</button>
+      </form>
+    </section>
 
   <h1>EX2</h1>
     <p><button onclick="euler1()">Press for solution to project Euler</button>
